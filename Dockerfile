@@ -1,4 +1,4 @@
-FROM node:18-alpine as ui
+FROM node:20-alpine as ui
 
 WORKDIR /app
 COPY ui/*.* ./
@@ -6,7 +6,7 @@ RUN npm install
 COPY ui/src ./src
 RUN npm run build
 
-FROM node:18-alpine
+FROM node:20-alpine
 
 WORKDIR /app
 COPY package.json package-lock.json tsconfig.json ./
